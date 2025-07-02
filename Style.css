@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  outline: 1px solid red;
+
 }
 
 body {
@@ -21,47 +21,79 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 30vmin;
-
+  min-height: 40vmin;
+  grid-template-columns: auto cabeça botoes ;
+  transition: background-image 1s ease;
 }
+
+header:hover {
+  background-image: url('img/Captura-de-Tela-2023-10-12-às-11.47.26_Easy-Resize.com_.jpg');
+}
+
 .logo{
 
+  display: flex;
+  top: 0;
+  left: 0;
+  position: fixed;
 }
 
-.header-content {
-  max-width: 80vmax;
+nav {
+    grid-area: botoes;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 5px 0;
+}
+
+.uli {
+font-family: 'Times New Roman', Times, serif;
+list-style: none;
+display: flex;
+align-items: center;
+text-decoration: none;
+font-weight: bold;
+top: 2vmin;
+right: 0;
+position: fixed;
+}
+
+.uli li {
+margin: 0 1vmin;
+font-size: 18px;
+}
+
+.uli li a {
+color: white;
+text-decoration: none;
+}
+
+.uli:hover {
+  color: blue;
+}
+
+.cabeçario {
+  grid-area: cabeça;
+  display: grid;
+  justify-content: center;
+  height: 10vmax;
+  max-width: 70vmax;
   gap: 2vmin;
 }
 
-.header-content h1 {
+.cabeçario h1 {
   font-size: 5vmin;
   margin-bottom: 2vmin;
-}
-
-.header-content p {
-  font-size: 3vmin;
-  margin-bottom: 4vmin;
-}
-
-.butao {
-  margin-top: 3vmin;
-}
-
-.butao1 {
-  padding: 1.5vmin 4vmin;
-  font-size: 2.5vmin;
-  background-color: #ffcc00;
-  color: #003366;
-  border: none;
-  border-radius: 2vmin;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.butao1:hover {
-  background-color: #e6b800;
   color: white;
 }
+
+.cabeçario p {
+  font-size: 3vmin;
+  margin-bottom: 4vmin;
+  color: white;
+}
+
+
 
 .informaçoes {
   display: grid;
