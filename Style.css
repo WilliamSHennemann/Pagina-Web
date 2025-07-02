@@ -22,7 +22,6 @@ header {
   justify-content: center;
   align-items: center;
   min-height: 40vmin;
-  grid-template-columns: auto cabeça botoes ;
   transition: background-image 1s ease;
 }
 
@@ -31,19 +30,17 @@ header:hover {
 }
 
 .logo{
-
   display: flex;
-  top: 0;
-  left: 0;
-  position: fixed;
+  top: 0.3vmin;
+  left: 0.3vmin;
+  position: absolute;
 }
 
 nav {
-    grid-area: botoes;
 display: flex;
 justify-content: space-between;
 align-items: center;
-padding: 5px 0;
+padding: 5vmin 0;
 }
 
 .uli {
@@ -54,8 +51,8 @@ align-items: center;
 text-decoration: none;
 font-weight: bold;
 top: 2vmin;
-right: 0;
-position: fixed;
+right: 1vmin;
+position: absolute;
 }
 
 .uli li {
@@ -68,13 +65,11 @@ color: white;
 text-decoration: none;
 }
 
-.uli:hover {
-  color: blue;
+.uli li a:hover {
+  color: black;
 }
 
 .cabeçario {
-  grid-area: cabeça;
-  display: grid;
   justify-content: center;
   height: 10vmax;
   max-width: 70vmax;
@@ -101,6 +96,7 @@ text-decoration: none;
     "header"
     "main"
     "sidebar"
+    "form"
     "footer";
   grid-template-columns: 100%;
   gap: 3vmin;
@@ -122,6 +118,46 @@ aside {
   padding: 3vmin;
   border-radius: 2vmin;
 }
+.form{
+    grid-area: form;
+    justify-items: center;
+}
+fieldset{
+    border: 0;
+}
+input {
+    padding: 2vmin;
+    width: 40vmin;
+    margin-bottom: 2vmin;
+    border-radius: 3vmin;
+    margin-top: 0.5vmin;
+    border: 0.2vmin solid black;
+    margin-left: 2vmin;
+}
+
+.enviar {
+    padding: 1.5vmin;
+    margin-left: 3vmin;
+    width: 30vmin;
+    color: rgb(255, 255, 255);
+    font-size: 3vmin;
+    background-color: gray;
+}
+
+fieldset {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    align-self: center;
+}
+
+.interesses {
+    margin-left: -15vmin;
+}
+
+.interessesdois {
+    margin-left: -16vmin;
+    font-size: 2.5vmin;
+}
 
 footer {
   grid-area: footer;
@@ -130,12 +166,29 @@ footer {
   text-align: center;
   padding: 3vmin;
   border-radius: 2vmin;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
 }
+.footer1{
+    display: flex;
+}
+
+.footer2{
+    display: flex;
+}
+
+.footer3{
+    display: flex;
+}
+
+
 @media (min-width: 600px) {
   .container {
     grid-template-areas:
       "header header"
       "main sidebar"
+      "form form"
       "footer footer";
     grid-template-columns: 2fr 1fr;
   }
@@ -146,7 +199,6 @@ footer {
     grid-template-columns: 3fr 1fr;
   }
 }
-
 
 h1, h2 {
   margin-top: 0;
